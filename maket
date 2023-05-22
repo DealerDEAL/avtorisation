@@ -1,0 +1,51 @@
+#include <iostream>
+#include <fstream>
+#include <stdlib.h>
+using namespace std;
+
+class Person {
+    public:
+    int pasword, id;
+    string name;
+    Person(int pasword, int id, string name) {
+        this->pasword = pasword;
+        this->id = id;
+        this->name = name;
+    }
+};
+
+int main()
+{
+    ofstream out;
+    int n, pas, i, check;
+    string* name = (string*)calloc(100, sizeof(string));
+    int* pasword = (int*)calloc(100, sizeof(int));
+    //int* id = (int*)calloc(100, sizeof(int));
+    cout << "зарегистрироватся - 1\n";
+    cout<<"войти - 2\n";
+    cin >> check;
+    cout<<"введите айди";
+    cin>>i;
+    cout<<"введите имя и пароль";
+    cin>>name[i], pasword[i];
+    if(check==1){
+        out.open("хранилище паролей.txt");
+        if (out.is_open())
+        {
+            out<<"пополнение 1 баланса = "<<p->balance<<"\n";
+        }
+        out.close();
+        cout<<"f";
+        return 0;
+    }
+    if(check==2){
+        cout<<"b";
+        return 0;
+    }
+    else{
+        cout<<"h";
+        return 0;
+    }
+   // Person person = new Person(pas,id,name);
+
+}

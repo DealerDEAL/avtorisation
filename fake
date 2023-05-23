@@ -4,20 +4,8 @@
 
 using namespace std;
 
-class Person {
-    public:
-    int pasword;
-    string name;
-    Person(int pasword, string name) {
-        this->pasword = pasword;
-        this->name = name;
-    }
-};
-
 int main()
 {
-    ofstream out;
-    ifstream in;
     int b,i,check;
     cout<<"введите размер хранилища\n";
     cin>> b;

@@ -1,0 +1,52 @@
+#include <iostream>
+#include <fstream>
+#include <stdlib.h>
+
+using namespace std;
+
+class Person {
+    public:
+    int pasword;
+    string name;
+    Person(int pasword, string name) {
+        this->pasword = pasword;
+        this->name = name;
+    }
+};
+
+int main()
+{
+    ofstream out;
+    ifstream in;
+    int b,i,check;
+    cout<<"введите размер хранилища\n";
+    cin>> b;
+    string* n = (string*)calloc(b, sizeof(string));
+    int* pas = (int*)calloc(b, sizeof(int));
+    
+       cout<<"\nвведите id\n";
+        cin>> i;
+        cout<<"введите имя avtor\n";
+        string n1;
+        cin>>n1;
+        n[i]=n1;
+        cout<<"введите пароль avtor\n";
+        cin>>pas[i];
+        cout<<"reg: yes-1, no-2\n";
+        cin>>check;
+        if(check==1){
+        cout<<"введите имя reg\n";
+        string n2;
+        cin>>n2;
+        cout<<"введите пароль reg\n";
+        int pas2;
+        cin>>pas2;
+        if(n[i]==n2&&pas[i]==pas2){
+            cout<<"всё верно";
+        }
+        else{
+            cout<<"неверный логин или пароль";
+        }
+        }
+    return 0;
+}

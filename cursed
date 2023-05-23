@@ -1,0 +1,69 @@
+#include <iostream>
+#include <fstream>
+#include <stdlib.h>
+
+using namespace std;
+
+class Person {
+    public:
+    int pasword;
+    string name;
+    Person(int pasword, string name) {
+        this->pasword = pasword;
+        this->name = name;
+    }
+};
+
+int main()
+{
+    ofstream out;
+    ifstream in;
+    int b,i,check;
+    cout<<"введите размер хранилища\n";
+    cin>> b;
+    string* n = (string*)calloc(b, sizeof(string));
+    int* pas = (int*)calloc(b, sizeof(int));
+    cout<<"ator-1, reg-2\n";
+    cin>> check;
+    if(check==1){
+       cout<<"\nвведите id\n";
+        cin>> i;
+        cout<<"введите имя\n";
+        string n1;
+        cin>>n1;
+        n[i]=n1;
+        cout<<"введите пароль\n";
+        cin>>pas[i];
+        Person *person = new Person(pas[i],n[i]);
+        out.open("cage.txt");
+    if (out.is_open())
+    {
+        out<< person->name<<"\n";
+        out<<"\n"<< person->pasword;
+    }
+    out.close();
+    }
+    if(check==2){
+       /*cout<<"\nвведите id\n";
+        cin>> i;
+        cout<<"введите имя\n";
+        string n1;
+        cin>>n1;
+        n[i]=n1;
+        cout<<"введите пароль\n";
+        cin>>pas[i];
+        Person *person1 = new Person(pas[i],n[i]);
+        cout <<"\n"<< person1->name<<"\n";
+        cout<<person1->pasword;*/
+        in.open("cage.txt");
+        int s;
+    if (in.is_open())
+    {
+        in>>s;
+    }
+    in.close();
+    cout<<"\n"<<s;
+    }
+    else
+    return 0;
+}

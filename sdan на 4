@@ -1,0 +1,83 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+class Person {
+    public:
+    int pasword;
+    string name;
+    Person(int pasword, string name) {
+        this->pasword = pasword;
+        this->name = name;
+    }
+};
+
+int main()
+{
+    ofstream out;
+    ifstream in;
+    int b=2000,i=1,check, maket_pas, maket_id;
+    string maket_n;
+    // cout<<"введите размер хранилища\n";
+    // cin>> b;
+    string* n = (string*)calloc(b, sizeof(string));
+    int* pas = (int*)calloc(b, sizeof(int));
+    cout<<"reg-1, avtor-2\n";
+    cin>> check;
+    maket_id=5;
+    maket_n="s";
+    n[maket_id]=maket_n;
+    maket_pas=12;
+    pas[maket_id]=maket_pas;
+    string n1;
+    
+        
+        
+    if(check==1){
+        cout<<"введите имя\n";
+        cin>>n1;
+        maket_n=n1;
+        n[i]=maket_n;
+        cout<<"введите пароль\n";
+        cin>>maket_pas;
+        pas[i]=maket_pas;
+        Person *person = new Person(pas[i],n[i]);
+        out.open("cage.txt");
+        if (out.is_open())
+        {
+            out<< person->name << " ";
+            out<< person->pasword;
+        }
+        out.close();
+        }
+    if(check==2){
+        bool check2=false;
+        int k;
+        string h;
+        ifstream in("cage.txt");
+        if (in.is_open()){
+            in>>h;
+            in>>k;
+        }
+        in.close();
+
+        while(check2==false){
+       cout<<"\nвведите name\n";
+       string in;
+       cin>> in;
+       if(in==h){
+        cout<<"введите pasword\n";
+        int i2;
+        cin>>i2;
+        if(i2==k){
+            cout<<"вход выполнен";
+            return 0;
+        }
+       }
+       cout<<"неверный name или пароль";
+        }
+    }
+    else
+    return 0;
+}
